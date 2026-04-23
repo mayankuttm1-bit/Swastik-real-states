@@ -1086,9 +1086,22 @@ input, textarea, select {
    FOOTER
    ================================================ */
 .footer {
-  background: var(--color-dark);
+  background: linear-gradient(to bottom, #1a1a1a, #0a0a0a);
   color: rgba(255,255,255,0.7);
   padding-top: var(--space-3xl);
+  position: relative;
+  border-top: 2px solid var(--color-gold-dark);
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(203,161,53,0.1), transparent 70%);
+  pointer-events: none;
+}
+.footer .container {
+  position: relative;
+  z-index: 1;
 }
 
 .footer__grid {
@@ -1101,9 +1114,12 @@ input, textarea, select {
 
 .footer__brand-logo {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-white);
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
   margin-bottom: var(--space-sm);
 }
 
@@ -1940,15 +1956,15 @@ input, textarea, select {
   }
 
   .floating-btns {
-    display: none;
-  }
-
-  .mobile-cta-bar {
     display: flex;
   }
 
+  .mobile-cta-bar {
+    display: none;
+  }
+
   body {
-    padding-bottom: 70px;
+    padding-bottom: 0;
   }
 }
 
@@ -1969,6 +1985,18 @@ input, textarea, select {
 
   .hero__scroll {
     display: none;
+  }
+
+  .contact-form {
+    padding: var(--space-lg);
+  }
+
+  .contact-info-card {
+    padding: var(--space-md);
+  }
+
+  .contact-info-card__value {
+    word-break: break-word;
   }
 
   .trust-bar__grid {
